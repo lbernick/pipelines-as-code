@@ -1005,7 +1005,7 @@ func Test_getAnnotationValues(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := getAnnotationValues(tt.args.annotation)
+			got, err := GetAnnotationValues(tt.args.annotation)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("getAnnotationValues() error = %v, wantErr %v", err, tt.wantErr)
 				return

@@ -55,7 +55,7 @@ func branchMatch(prunBranch, baseBranch string) bool {
 }
 
 // TODO: move to another file since it's common to all annotations_* files
-func getAnnotationValues(annotation string) ([]string, error) {
+func GetAnnotationValues(annotation string) ([]string, error) {
 	re := regexp.MustCompile(reValidateTag)
 	annotation = strings.TrimSpace(annotation)
 	match := re.Match([]byte(annotation))
@@ -204,7 +204,7 @@ func MatchPipelinerunByAnnotation(ctx context.Context, logger *zap.SugaredLogger
 }
 
 func matchOnAnnotation(annotations, eventType string, branchMatching bool) (bool, error) {
-	targets, err := getAnnotationValues(annotations)
+	targets, err := GetAnnotationValues(annotations)
 	if err != nil {
 		return false, err
 	}

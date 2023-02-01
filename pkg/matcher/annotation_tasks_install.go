@@ -119,7 +119,7 @@ func grabValuesFromAnnotations(annotations map[string]string, annotationReg stri
 		if !rtareg.Match([]byte(annotationK)) {
 			continue
 		}
-		items, err := getAnnotationValues(annotationV)
+		items, err := GetAnnotationValues(annotationV)
 		if err != nil {
 			return ret, err
 		}
